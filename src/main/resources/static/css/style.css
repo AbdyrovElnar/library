@@ -1,0 +1,36 @@
+.buttons-link {
+    text-decoration: none;
+    color: #fff;
+}
+
+.buttons {
+    border: 0;
+    text-decoration: none;
+    background-color: rgba(28, 28, 28, 0);
+    color: #fff;
+}
+
+.test {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+
+}
+
+.child1 {
+    flex-grow: 1;
+
+}
+
+.child {
+    padding-right: 1rem;
+}
+
+.data {
+    text-align: center;
+}
+
+.container {
+    padding: 16px;
+}
