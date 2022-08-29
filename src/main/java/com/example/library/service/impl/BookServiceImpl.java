@@ -7,6 +7,8 @@ import com.example.library.service.BookService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class BookServiceImpl implements BookService {
@@ -24,5 +26,10 @@ public class BookServiceImpl implements BookService {
                         .booking(bookDTO.getBooking())
                         .build()
         );
+    }
+
+    @Override
+    public Optional<BookDTO> getBookByBarcode(String code) {
+       return bookRepository.findBookByBarcode(code).map(BookDTO::from);
     }
 }
