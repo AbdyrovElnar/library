@@ -22,9 +22,9 @@ public class Book {
 
     private String title;
 
-    @OneToMany
-    @JoinColumn(name = "author_id")
-    private List<Author> author;
+//    @OneToMany
+//    @JoinColumn(name = "author_id")
+//    private List<Author> author;
 
     private Integer year;
 

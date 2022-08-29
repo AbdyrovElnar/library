@@ -25,7 +25,7 @@ public class Booking {
     private String phone;
     private LocalDateTime date;
 
-    @OneToMany
-    @JoinColumn(name = "book_id")
-    private List<Book> book;
+//    @OneToMany
+//    @JoinColumn(name = "book_id")
+//    private List<Book> book;
 }
