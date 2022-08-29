@@ -1,13 +1,7 @@
 package com.example.library.service;
 
-import com.example.library.repository.BookRepository;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
+import com.example.library.dto.BookDTO;
 
-@Service
-@RequiredArgsConstructor
-public class BookService {
-    private final BookRepository bookRepository;
-
-
+public interface BookService {
+    void addBook(BookDTO bookDTO);
 }
