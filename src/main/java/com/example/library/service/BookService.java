@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface BookService {
-    void addBook(AuthorDTO authorDTO);
+    BookDTO addBook(BookDTO bookDTO);
 
     Optional<BookDTO> getBookByBarcode(String code);
 
