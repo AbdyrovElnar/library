@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Optional;
 
@@ -23,24 +24,33 @@ public class BookingController {
 //        return "index";
 //    }
 //
-//    @GetMapping("/add/book")
-//    public String getAddBook(Model model) {
-//        model.addAttribute("categories", categoryService.getAllCategories());
-//        return "add_book";
-//    }
-//
-//    @PostMapping("/add/book")
-//    public String addBook(BookDTO bookDTO) {
-//        bookService.addBook(bookDTO);
-//        return "redirect:/";
-//    }
+    @GetMapping("/add/book")
+    public String getAddBook(Model model) {
+        model.addAttribute("categories", categoryService.getAllCategories());
+        return "add_book";
+    }
 
-    @GetMapping("/search/{barcode}")
-    public String getBookByBarcode(@PathVariable String barcode) {
-        Optional<BookDTO> bookByBarcode = bookService.getBookByBarcode(barcode);
+    @PostMapping("/add/book")
+    public String addBook(BookDTO bookDTO) {
+        bookService.addBook(bookDTO);
+        return "redirect:/";
+    }
+
+    @PostMapping("/search")
+    public String getBookByBarcode(@RequestParam String qrContent) {
+        Optional<BookDTO> bookByBarcode = bookService.getBookByBarcode(qrContent);
         if (bookByBarcode.isPresent()) {
-            return "redirect:/book";
+            return "redirect:/book/" + qrContent;
         }
         return "redirect:/add/book";
     }
+
+
+
+    @GetMapping("/book/{barcode}")
+    public String getBook(Model model, @PathVariable String barcode){
+        model.addAttribute("book",bookService.getBookByBarcode(barcode));
+        return "book";
+    }
+
 }

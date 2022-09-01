@@ -19,6 +19,7 @@ public class QRCodeController {
 
     @GetMapping("/")
     public String index() {
+
         return "qwe";
     }
 
