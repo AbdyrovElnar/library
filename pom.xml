@@ -68,6 +68,14 @@
             <artifactId>javase</artifactId>
             <version>3.4.1</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.pnuema.java/barcode -->
+        <dependency>
+            <groupId>com.pnuema.java</groupId>
+            <artifactId>barcode</artifactId>
+            <version>1.9</version>
+        </dependency>
+
     </dependencies>
 
     <build>

@@ -29,6 +29,7 @@ public class BookDTO {
 
     public static BookDTO from(Book book) {
         return BookDTO.builder()
+                .id(book.getId())
                 .title(book.getTitle())
                 .year(book.getYear())
                 .description(book.getDescription())
