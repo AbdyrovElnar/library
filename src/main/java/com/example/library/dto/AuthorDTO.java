@@ -19,6 +19,7 @@ public class AuthorDTO {
 
     public static AuthorDTO from(Author author) {
         return AuthorDTO.builder()
+                .id(author.getId())
                 .name(author.getName())
                 .book(author.getBook())
                 .build();
